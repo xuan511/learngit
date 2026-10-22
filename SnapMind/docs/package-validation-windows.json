@@ -1,0 +1,20 @@
+{
+  "first_successful_run": "https://github.com/xuan511/learngit/actions/runs/39713524352",
+  "source_commit": "5768368def0fb643b6b3fbeb2eb46655d89ffb84",
+  "runner": "windows-latest x64",
+  "python": "3.12",
+  "run_status": "success",
+  "duration_display": "3m 2s",
+  "source_automated_tests": "passed",
+  "offline_model_checksum_verification": "passed",
+  "pyinstaller_portable_folder": "passed",
+  "packaged_executable_offscreen_startup": "passed",
+  "packaged_offline_ocr_and_persistence": "passed; database contains 0x09F0",
+  "artifact_name": "SnapMind-Windows-x64",
+  "artifact_size_display": "132 MB",
+  "artifact_id": "12398510897",
+  "artifact_digest": "sha256:0c1f9ddd7e39d9773f031825aa6ab692e839bf0366fcf7bb37c5c2b751e2f941",
+  "artifact_download_requires_github_login": true,
+  "interactive_desktop_hotkeys_tray_and_multimonitor_dpi": "not manually verified",
+  "clean_user_machine_portability": "not manually verified"
+}

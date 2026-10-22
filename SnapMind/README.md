@@ -2,7 +2,9 @@
 
 本地截图、离线 OCR、超级剪贴板与个人知识收纳的原生桌面应用。中文优先，默认浅色，支持深色；无登录、无 API Key、不上传用户内容。
 
-**当前交付状态：源码与 Linux 实测版本，Windows 便携构建脚本已提供；尚未在真实 Windows 上运行或生成经验证的 EXE。请先阅读 [测试报告](docs/TEST_REPORT.md)。**
+**Windows x64 便携版已构建成功，Windows 运行器上的自动化测试、打包后 EXE 启动和离线 OCR 检查通过。真实桌面的全局快捷键、多显示器和混合 DPI 仍需人工验收。** 详情见 [测试报告](docs/TEST_REPORT.md)。
+
+[下载 Windows 便携包（GitHub 登录后）](https://github.com/xuan511/learngit/actions/runs/39713524352/artifacts/12398510897) · [查看成功的 Windows 构建](https://github.com/xuan511/learngit/actions/runs/39713524352) · [直接下载源码 ZIP](https://github.com/xuan511/learngit/raw/refs/heads/snapmind-desktop/SnapMind/dist/SnapMind-0.1.0-source.zip)
 
 ![主界面](docs/screenshots/home-light.png)
 
@@ -28,7 +30,11 @@
 
 ## Windows 用户运行
 
-从经过 Windows 构建和测试的 `SnapMind-0.1.0-Windows-x64.zip` 解压完整文件夹，双击 `SnapMind.exe`。最终用户无需 Python。**当前仓库没有声称已经产生这个 Windows ZIP**；可按下节构建，也可运行仓库中的 Windows Actions 工作流获取产物。
+1. 登录 GitHub，打开上方 Windows 下载链接；也可进入成功构建页面，下滑到 **Artifacts**，点击 **SnapMind-Windows-x64**（约 132 MB）。
+2. 解压下载的外层 Artifact ZIP，再解压其中的 `SnapMind-0.1.0-Windows-x64.zip`。
+3. 打开 `SnapMind` 文件夹，双击 `SnapMind.exe`。最终用户无需安装 Python。
+
+这些文件由云端和 GitHub 运行器生成，不会自动出现在你的本地电脑；点击下载后才会保存到浏览器的下载目录。`/workspace/...` 是云端路径。
 
 请将整个文件夹放在可写目录，不要放在 `Program Files`。不能只复制 EXE；`_internal/` 包含 Qt、OCR 模型和运行库。数据默认在 EXE 同级 `data/`，配置在 `config/`。如需其他位置，可以使用 `SnapMind.exe --data-dir "D:\个人资料\瞬知"`。
 
@@ -53,7 +59,7 @@ powershell -File tools\build-windows.ps1
 
 也可手工运行 `.venv\Scripts\python -m tools.build --target windows`。Windows 构建输出 `dist/SnapMind/` 和 ZIP / SHA-256；构建工具按目标操作系统运行，不支持在 Linux 交叉生成 Windows EXE。
 
-仓库包含 `.github/workflows/snapmind-windows.yml`，支持手动运行或相关文件变更时构建。当前会话没有推送代码或运行该远程工作流。
+仓库包含 `.github/workflows/snapmind-windows.yml`，支持手动运行或相关文件变更时构建。项目已上传到 `snapmind-desktop` 分支，Windows 成功构建记录见上方链接；该次构建的提交为 `5768368def0fb643b6b3fbeb2eb46655d89ffb84`。
 
 Linux 验证：
 
