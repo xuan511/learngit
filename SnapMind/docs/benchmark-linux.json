@@ -1,0 +1,46 @@
+{
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "display": "Qt offscreen; not physical Windows desktop",
+  "window_ready_seconds": 0.232,
+  "idle_rss_mib": 90.8,
+  "idle_cpu_percent_one_core": 0.98,
+  "idle_sample_seconds": 2.03,
+  "ocr_cold_seconds": 1.521,
+  "ocr_warm_seconds": [
+    0.687,
+    0.656,
+    0.672
+  ],
+  "rss_after_ocr_mib": 370.4,
+  "idle_after_ocr_cpu_percent_one_core": 2.46,
+  "idle_after_ocr_sample_seconds": 2.03,
+  "fixture_pixels": [
+    1150,
+    300
+  ],
+  "recognized_text": "控制寄存器0x09F0\nRegister address: 0x09F0\nint value = 42;\ngit status --short",
+  "history_count": 10001,
+  "search": {
+    "寄存器": {
+      "median_ms": 5.451,
+      "returned": 60
+    },
+    "0x09F0": {
+      "median_ms": 4.789,
+      "returned": 2
+    },
+    "09F": {
+      "median_ms": 4.097,
+      "returned": 20
+    },
+    "configuration": {
+      "median_ms": 6.082,
+      "returned": 60
+    },
+    "不存在的短词": {
+      "median_ms": 44.431,
+      "returned": 0
+    }
+  }
+}
