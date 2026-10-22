@@ -1,0 +1,16 @@
+{
+  "archive": "SnapMind-0.1.0-Linux-x64-validation.zip",
+  "archive_bytes": 273588733,
+  "executable_sha256": "bf4c1c3faaa47511fc459f5075c1759a85401d066833d8bbdf0f318420887aba",
+  "unpacked_file_bytes": 730470147,
+  "platform": "linux",
+  "relocation": "Chinese path with spaces, outside source checkout",
+  "source_python_environment_removed": true,
+  "startup_smoke": "passed",
+  "packaged_offline_ocr": "控制寄存器0x09F0\nRegister address: 0x09F0\nint value = 42;\ngit status --short",
+  "restart_persistence": "passed",
+  "sqlite_integrity": "ok",
+  "network_syscall_trace": true,
+  "observed_ip_sockets_or_connects": 0,
+  "windows_native_validation": false
+}
