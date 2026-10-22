@@ -21,7 +21,17 @@ jobs:
           cache-dependency-path: SnapMind/requirements*.txt
       - name: Test and build portable folder
         shell: pwsh
-        run: ./SnapMind/tools/build-windows.ps1
+        run: |
+          try {
+            & ./SnapMind/tools/build-windows.ps1 *>&1 | Tee-Object -FilePath snapmind-build.log
+          } catch {
+            Write-Output "::error title=Windows build script::$($_.Exception.Message)"
+            throw
+          }
+      - name: Publish test diagnostics
+        if: always()
+        shell: pwsh
+        run: python SnapMind/tools/ci_summary.py
       - uses: actions/upload-artifact@v4
         with:
           name: SnapMind-Windows-x64

@@ -7,7 +7,7 @@ $Python = Join-Path $PWD '.venv\Scripts\python.exe'
 & $Python -m pip install -r requirements-dev.txt
 if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed.' }
 $env:QT_QPA_PLATFORM = 'offscreen'
-& $Python -m pytest -q
+& $Python -m pytest -q --junitxml=docs/test-results-windows.xml
 if ($LASTEXITCODE -ne 0) { throw 'Tests failed; packaging stopped.' }
 Remove-Item Env:QT_QPA_PLATFORM
 & $Python -m tools.build --target windows

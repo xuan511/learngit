@@ -1,4 +1,5 @@
 import time
+from pathlib import Path
 
 import pytest
 from PySide6.QtCore import QMimeData, QPoint, Qt, QUrl
@@ -183,9 +184,7 @@ def test_clipboard_images_html_and_files(window, app, tmp_path):
     wait_for(app, lambda: not window.io.pending)
     record = window.store.search(kinds=["files"])[0]
     window.copy_record(record)
-    assert [u.toLocalFile() for u in app.clipboard().mimeData().urls()] == [
-        str(p) for p in paths
-    ]
+    assert [Path(u.toLocalFile()) for u in app.clipboard().mimeData().urls()] == paths
 
 
 def test_size_limit_and_task_failure_do_not_break_ui(window, app):
